@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         lives--;
         if (lives <= 0)
-            EditorSceneManager.LoadScene("LavaStage");
+            Application.LoadLevel("LavaStage");
         else
         {
             rb.velocity = Vector3.zero;
@@ -118,7 +117,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //slow time
-            if (Input.GetKeyDown(KeyCode.Question))
+            if (Input.GetKeyDown(KeyCode.Slash))
             {
                 StartCoroutine(SlowTime());
             }

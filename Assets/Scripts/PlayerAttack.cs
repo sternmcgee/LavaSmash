@@ -19,9 +19,19 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         //if player1 presses button and collides with player2, deal damage + force
-        if (Input.GetKeyDown(KeyCode.E) && !isAttacking)
+        if (gameObject.name == "Player2")
         {
-            StartCoroutine(Attack());
+            if (Input.GetKeyDown(KeyCode.E) && !isAttacking)
+            {
+                StartCoroutine(Attack());
+            }
+        }
+        if (gameObject.name == "Player")
+        {
+            if (Input.GetKeyDown(KeyCode.Period) && !isAttacking)
+            {
+                StartCoroutine(Attack());
+            }
         }
     }
 
