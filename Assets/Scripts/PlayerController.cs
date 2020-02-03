@@ -65,33 +65,64 @@ public class PlayerController : MonoBehaviour
 
         float xForce = 0f;
         float yForce = 0f;
-        //handle side to side movement
-        if (Input.GetKey(KeyCode.A))
+        if (gameObject.name == "Player2")
         {
-            xForce = -1f;
-        }
+            //handle side to side movement
+            if (Input.GetKey(KeyCode.A))
+            {
+                xForce = -1f;
+            }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            xForce = 1f;
-        }
+            if (Input.GetKey(KeyCode.D))
+            {
+                xForce = 1f;
+            }
 
-        //handle jumping
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            yForce = 1f;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            yForce = -1f;
-        }
+            //handle jumping
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                yForce = 1f;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                yForce = -1f;
+            }
 
-        //slow time
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            StartCoroutine(SlowTime());
+            //slow time
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                StartCoroutine(SlowTime());
+            }
         }
+        else
+        {
+            //handle side to side movement
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                xForce = -1f;
+            }
 
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                xForce = 1f;
+            }
+
+            //handle jumping
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                yForce = 1f;
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                yForce = -1f;
+            }
+
+            //slow time
+            if (Input.GetKeyDown(KeyCode.Question))
+            {
+                StartCoroutine(SlowTime());
+            }
+        }
         //make vector
         Vector3 moveForce = new Vector3(xForce * speed, yForce * jumpFactor, 0f);
 

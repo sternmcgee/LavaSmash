@@ -3826,7 +3826,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 127682589, guid: 32fc3589f3f249047b2ae956f1783f7c, type: 3}
       propertyPath: isAI
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 127682589, guid: 32fc3589f3f249047b2ae956f1783f7c, type: 3}
       propertyPath: spawnPoint
@@ -3838,7 +3838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1680409837, guid: 32fc3589f3f249047b2ae956f1783f7c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1680409837, guid: 32fc3589f3f249047b2ae956f1783f7c, type: 3}
       propertyPath: damage
