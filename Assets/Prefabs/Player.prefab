@@ -268,6 +268,8 @@ GameObject:
   - component: {fileID: 2627735159191079241}
   - component: {fileID: 2627735159191079245}
   - component: {fileID: 127682589}
+  - component: {fileID: 5002859929907420125}
+  - component: {fileID: 1680409837}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -379,8 +381,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bf2cd7f7c751f4aab29415ccd7c2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAI: 0
   slowTimeFactor: 0.2
   speed: 10
   jumpFactor: 250
   oraSound: {fileID: 1230255054}
   warudoSound: {fileID: 1744586455}
+--- !u!135 &5002859929907420125
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627735159191079238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1680409837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627735159191079238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc054de3f2783748b02aad23c7c7450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

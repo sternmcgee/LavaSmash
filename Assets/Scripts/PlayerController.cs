@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool isAI = false;
+    public int lives = 2;
+    public Transform spawnPoint = null;
     private int health = 0;
     public float slowTimeFactor = 0.2f;
     public float speed;
@@ -18,6 +22,17 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    public void Respawn()
+    {
+        lives--;
+        if (lives <= 0)
+            EditorSceneManager.LoadScene("LavaStage");
+        else
+        {
+            rb.velocity = Vector3.zero;
+            gameObject.transform.position = spawnPoint.position;
+        }        
+    }
     private IEnumerator SlowTime()
     {
         warudoSound.Play();
@@ -45,6 +60,9 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (isAI)
+            return;
+
         float xForce = 0f;
         float yForce = 0f;
         //handle side to side movement

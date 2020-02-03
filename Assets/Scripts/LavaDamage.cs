@@ -24,7 +24,7 @@ public class LavaDamage : MonoBehaviour
 
         player = collision.gameObject.GetComponent<PlayerController>();
         Vector3 impact = collision.GetContact(0).normal;
-        player.TakeDamage(25);
+        player.TakeDamage(150);
         player.TakeForce(impact);
     }
 }
